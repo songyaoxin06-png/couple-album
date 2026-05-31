@@ -1,0 +1,6 @@
+{
+  "name": "梦幻 3D AI 相册",
+  "description": "给恋人研发的 3D 互动智能 AI 恋爱相册，搭载重力飘散、3D 螺旋、心形状阵列排布、音乐八音盒与 Gemini 浪漫蜜语生成等高拟真电影特效！",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
