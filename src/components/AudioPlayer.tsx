@@ -238,7 +238,22 @@ export default function AudioPlayer({ partnerA, partnerB }: AudioPlayerProps) {
       console.error("Failed to load persisted custom audio:", err);
     });
 
+    // Auto-play music when the component mounts
+    const autoPlayTimer = setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.volume = currentVolume;
+        audioRef.current.play().then(() => {
+          setIsPlaying(true);
+          startLyrics();
+          startVisualizer();
+        }).catch(err => {
+          console.warn("Autoplay blocked by browser, waiting for user interaction:", err);
+        });
+      }
+    }, 500);
+
     return () => {
+      clearTimeout(autoPlayTimer);
       if (synthRef.current) {
         synthRef.current.stop();
       }
@@ -445,8 +460,13 @@ export default function AudioPlayer({ partnerA, partnerB }: AudioPlayerProps) {
         ref={audioRef}
         src={customAudioUrl || DEFAULT_SONGS[selectedSongIdx].url}
         loop
+        preload="metadata"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
+        onError={(e) => {
+          console.warn("Audio element error:", e);
+          // Fallback: try next song if current one fails
+        }}
         onTimeUpdate={() => {
           if (audioRef.current) {
             setCurrentTime(audioRef.current.currentTime);
