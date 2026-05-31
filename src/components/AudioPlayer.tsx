@@ -121,24 +121,30 @@ interface SongOption {
 const DEFAULT_SONGS: SongOption[] = [
   {
     id: 'song1',
-    name: '《直到你降临 · 浪漫钢琴》',
-    url: 'https://pub-c5e31b5cdafb419a866171115c9006ae.r2.dev/love-story-piano.mp3', // high speed CDN romantic track
-    desc: '温暖悠扬的浪漫纯钢琴变奏曲'
+    name: '《专属回忆》',
+    url: '/bgm.mp4',
+    desc: '我们的专属背景音乐'
   },
   {
     id: 'song2',
+    name: '《直到你降临 · 浪漫钢琴》',
+    url: 'https://pub-c5e31b5cdafb419a866171115c9006ae.r2.dev/love-story-piano.mp3',
+    desc: '温暖悠扬的浪漫纯钢琴变奏曲'
+  },
+  {
+    id: 'song3',
     name: '《流星许愿 · 温柔吉他》',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3',
     desc: '温柔清澈的治愈吉他指弹'
   },
   {
-    id: 'song3',
+    id: 'song4',
     name: '《微风吹拂 · 甜蜜节奏》',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
     desc: '甜蜜轻快的慵懒行进律动'
   },
   {
-    id: 'song4',
+    id: 'song5',
     name: '《执手百年 · 悠扬小提琴》',
     url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
     desc: '深情舒缓的弦乐与合成声部'
